@@ -4,7 +4,7 @@ import { User } from '../types';
 
 interface HeaderProps {
   user: User | null;
-  onNavigate: (page: 'home' | 'create' | 'auth') => void;
+  onNavigate: (page: 'home' | 'create' | 'auth' | 'trends' | 'podcasts') => void;
   onLogout: () => void;
 }
 
@@ -32,11 +32,13 @@ const Header: React.FC<HeaderProps> = ({ user, onNavigate, onLogout }) => {
             Главная
           </button>
           <button 
+            onClick={() => onNavigate('trends')}
             className="text-slate-600 hover:text-blue-600 font-medium transition-colors"
           >
             Тренды
           </button>
           <button 
+            onClick={() => onNavigate('podcasts')}
             className="text-slate-600 hover:text-blue-600 font-medium transition-colors"
           >
             Подкасты

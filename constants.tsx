@@ -1,5 +1,5 @@
 
-import { NewsItem, Category } from './types';
+import { NewsItem, Category, Podcast } from './types';
 
 export const CATEGORIES: { id: Category; label: string; icon: string }[] = [
   { id: 'AI', label: 'ИИ', icon: 'fa-brain' },
@@ -7,8 +7,6 @@ export const CATEGORIES: { id: Category; label: string; icon: string }[] = [
   { id: 'Mobile', label: 'Мобайл', icon: 'fa-mobile-screen' },
   { id: 'Security', label: 'Безопасность', icon: 'fa-shield-halved' },
   { id: 'Hardware', label: 'Железо', icon: 'fa-microchip' },
-  { id: 'Gaming', label: 'Гейминг', icon: 'fa-gamepad' },
-  { id: 'Career', label: 'Карьера', icon: 'fa-briefcase' },
 ];
 
 export const INITIAL_NEWS: NewsItem[] = [
@@ -22,6 +20,14 @@ export const INITIAL_NEWS: NewsItem[] = [
     date: '2024-05-20',
     imageUrl: 'https://picsum.photos/seed/ai/800/400',
     views: 1240,
+    likes: 45,
+    likedByUserIds: [],
+    tags: ['Google', 'Gemini', 'LLM'],
+    readTime: 5,
+    isHot: true,
+    comments: [
+      { id: 'c1', author: 'TechGuru', text: 'Это просто невероятно! 10 млн токенов — это же целая база данных в контексте.', date: '2024-05-21', likes: 5, likedByUserIds: [] }
+    ]
   },
   {
     id: '2',
@@ -33,16 +39,29 @@ export const INITIAL_NEWS: NewsItem[] = [
     date: '2024-05-18',
     imageUrl: 'https://picsum.photos/seed/react/800/400',
     views: 3500,
+    likes: 128,
+    likedByUserIds: [],
+    tags: ['React', 'Frontend', 'JS'],
+    readTime: 8,
+    comments: []
+  }
+];
+
+export const INITIAL_PODCASTS: Podcast[] = [
+  {
+    id: 'p1',
+    title: 'Будущее фронтенда с React 19',
+    host: 'Никита Сидоров',
+    duration: '45:20',
+    imageUrl: 'https://picsum.photos/seed/pod1/200/200',
+    date: '2024-05-15'
   },
   {
-    id: '3',
-    title: 'Новый вирус-шифровальщик атакует Linux-серверы',
-    summary: 'Эксперты по безопасности обнаружили новую угрозу, использующую уязвимости в SSH-протоколе.',
-    content: 'Киберпреступники начали активно использовать новый тип малвари, специально разработанный для серверов под управлением Linux. Вирус шифрует данные и требует выкуп в Monero...',
-    category: 'Security',
-    author: 'Дмитрий Иванов',
-    date: '2024-05-19',
-    imageUrl: 'https://picsum.photos/seed/security/800/400',
-    views: 890,
+    id: 'p2',
+    title: 'ИИ: Заменит ли он нас?',
+    host: 'Елена Кузнецова',
+    duration: '58:10',
+    imageUrl: 'https://picsum.photos/seed/pod2/200/200',
+    date: '2024-05-10'
   }
 ];

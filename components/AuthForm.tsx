@@ -20,11 +20,13 @@ const AuthForm: React.FC<AuthFormProps> = ({ onLogin }) => {
     }
 
     // Mock Authentication Logic
+    // Fix: Added missing 'likedNewsIds' to satisfy the User interface requirements.
     const mockUser: User = {
       id: Math.random().toString(36).substr(2, 9),
       username: username || email.split('@')[0],
       email: email,
-      avatar: `https://ui-avatars.com/api/?name=${username || email}&background=random`
+      avatar: `https://ui-avatars.com/api/?name=${username || email}&background=random`,
+      likedNewsIds: []
     };
 
     onLogin(mockUser);
